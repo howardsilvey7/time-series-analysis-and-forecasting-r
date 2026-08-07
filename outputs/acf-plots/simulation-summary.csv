@@ -1,0 +1,5 @@
+"statistic","estimate","theoretical"
+"sample_mean",11.8766343404126,12
+"sample_variance",2090.90962552938,2048
+"sample_lag_1_covariance",511.327349645914,512
+"sample_lag_1_acf",0.244524352200129,0.25

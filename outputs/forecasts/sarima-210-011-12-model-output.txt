@@ -1,0 +1,62 @@
+Model: SARIMA(2,1,0)(0,1,1)[12]
+
+initial  value 3.340809 
+iter   2 value 3.105512
+iter   3 value 3.086631
+iter   4 value 3.079778
+iter   5 value 3.069447
+iter   6 value 3.067659
+iter   7 value 3.067426
+iter   8 value 3.067418
+iter   8 value 3.067418
+final  value 3.067418 
+converged
+initial  value 3.065481 
+iter   2 value 3.065478
+iter   3 value 3.065477
+iter   3 value 3.065477
+iter   3 value 3.065477
+final  value 3.065477 
+converged
+<><><><><><><><><><><><><><>
+ 
+Coefficients: 
+     Estimate     SE  t.value p.value
+ar1    0.1351 0.0513   2.6326  0.0088
+ar2    0.2464 0.0515   4.7795  0.0000
+sma1  -0.6953 0.0381 -18.2362  0.0000
+
+sigma^2 estimated as 449.637 on 356 degrees of freedom 
+ 
+AIC = 8.991114  AICc = 8.991303  BIC = 9.034383 
+ 
+$fit
+
+Call:
+arima(x = xdata, order = c(p, d, q), seasonal = list(order = c(P, D, Q), period = S), 
+    include.mean = !no.constant, transform.pars = trans, fixed = fixed, optim.control = list(trace = trc, 
+        REPORT = 1, reltol = tol))
+
+Coefficients:
+         ar1     ar2     sma1
+      0.1351  0.2464  -0.6953
+s.e.  0.0513  0.0515   0.0381
+
+sigma^2 estimated as 449.6:  log likelihood = -1609.91,  aic = 3227.81
+
+$sigma2
+[1] 449.637
+
+$degrees_of_freedom
+[1] 356
+
+$t.table
+     Estimate     SE  t.value p.value
+ar1    0.1351 0.0513   2.6326  0.0088
+ar2    0.2464 0.0515   4.7795  0.0000
+sma1  -0.6953 0.0381 -18.2362  0.0000
+
+$ICs
+     AIC     AICc      BIC 
+8.991114 8.991303 9.034383 
+

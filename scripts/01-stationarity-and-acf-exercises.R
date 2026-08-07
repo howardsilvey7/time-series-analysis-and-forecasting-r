@@ -54,6 +54,7 @@ lag_one_covariance <- (
 )
 lag_one_acf <- lag_one_covariance / process_variance
 
+cat("\n\n--------------------------------------------\n")
 cat("Theoretical results for Gaussian white noise\n")
 cat("--------------------------------------------\n")
 cat("E(x_t):", process_mean, "\n")
