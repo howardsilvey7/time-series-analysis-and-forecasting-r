@@ -1,4 +1,3 @@
-
 ### `requirements-or-packages.md`
 
 ```markdown
@@ -12,86 +11,47 @@ Python is not required.
 
 ```text
 R 4.3 or newer
-
-The scripts may also work on earlier supported R 4.x releases.
-
-## Required packages
-
-### astsa
+Required Packages
+astsa
+install.packages("astsa")
 
 Used for:
 
-- `unemp`
-- `acf2()`
-- `sarima()`
-- `sarima.for()`
-
-Install with:
-
-```r
-install.packages("astsa")
-```
-
-### forecast
-
-Used for additional forecast objects, plotting, and optional diagnostics.
-
-Install with:
-
-```r
+unemployment time-series data;
+ACF/PACF analysis;
+SARIMA modelling;
+SARIMA forecasting.
+forecast
 install.packages("forecast")
-```
 
-## Optional packages
+Used for supporting time-series forecasting functionality.
 
-### tseries
-
-Useful for additional stationarity tests such as the augmented Dickey-Fuller
-test.
-
-```r
+tseries
 install.packages("tseries")
-```
 
-### ggplot2
+Used for Augmented Dickey-Fuller stationarity testing.
 
-Useful for customized visualizations, though the supplied scripts use base R
-and package-native plotting to minimize dependencies.
+Install All Required Packages
+RStudio or Visual Studio Code R Console
+install.packages(c("astsa", "forecast", "tseries"))
+Git Bash or Ordinary Terminal
+Rscript -e 'install.packages(c("astsa","forecast","tseries"), repos="https://cloud.r-project.org")'
+Automatic Dependency Handling
+source("scripts/run-all.R")
+Windows R Installation
 
-```r
-install.packages("ggplot2")
-```
+Typical location:
 
-## One-command installation
+C:\Program Files\R\
 
-```r
-required_packages <- c("astsa", "forecast")
+Example:
 
-missing_packages <- required_packages[
-  !vapply(required_packages, requireNamespace, logical(1), quietly = TRUE)
-]
+C:\Program Files\R\R-4.3.0\bin\Rscript.exe
 
-if (length(missing_packages) > 0) {
-  install.packages(missing_packages)
-}
-```
+Git Bash equivalent:
 
-## Reproducibility recommendation
-
-After confirming the project works, consider using `renv`:
-
-```r
-install.packages("renv")
-renv::init()
-renv::snapshot()
-```
-
-This creates a lockfile containing the exact package versions used.
-
-## Notes
-
-- `acf2()`, `sarima()`, `sarima.for()`, and `unemp` are supplied by `astsa`.
-- Do not list base R packages such as `stats`, `graphics`, or `utils` as
-  external requirements.
-- The unemployment data source should be documented more precisely before
-  formal publication if the original course material identifies its source.
+/c/Program Files/R/R-4.3.0/bin/Rscript.exe
+Notes
+acf2(), sarima(), sarima.for(), and unemp are supplied through astsa.
+Base R packages do not require separate installation.
+See RUNNING.md for execution instructions.
