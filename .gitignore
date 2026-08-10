@@ -1,0 +1,18 @@
+# R session files
+.Rhistory
+.RData
+.Ruserdata
+
+# RStudio machine-local state
+.Rproj.user/
+
+# Default temporary R graphics artifact
+Rplots.pdf
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
