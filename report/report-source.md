@@ -1,5 +1,5 @@
 
-### Time Series Analysis and Seasonal Forecasting in R
+# Time Series Analysis and Seasonal Forecasting in R
 
 ## Author
 
