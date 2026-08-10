@@ -1,10 +1,12 @@
+
+### `RUNNING.md`
+
+```markdown
 # Running the Project
 
-This repository is an R-based time-series analysis and forecasting project.
+## Recommended Workflow
 
-The workflow progresses from theoretical stationarity and autocorrelation exercises to an applied seasonal unemployment forecasting analysis using SARIMA.
+From the repository root:
 
-Run all commands from the repository root:
-
-```text
-time-series-analysis-and-forecasting-r/
+```r
+source("scripts/run-all.R")
