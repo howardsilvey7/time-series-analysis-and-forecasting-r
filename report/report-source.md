@@ -1,6 +1,4 @@
 
-### `report/report-source.md`
-
 ```markdown
 # Time Series Analysis and Seasonal Forecasting in R
 
