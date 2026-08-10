@@ -1,11 +1,12 @@
 # Data
 
-The analysis uses the `astsa::unemp` monthly U.S. unemployment-level series.
+This directory contains or documents source data required by the project.
 
-- Training period: January 1948 through December 1978
-- Frequency: Monthly
-- Units in the R series: Tens of thousands of unemployed persons
-- Seasonal adjustment: Not seasonally adjusted
+The historical unemployment series used to fit the SARIMA model is loaded programmatically through the `astsa` R package.
 
-The 1979 observations used for out-of-sample validation are documented in
-`report/forecast-validation-1979.csv`.
+The project also retains monthly observed unemployment values for 1979 so the twelve-period forecast can be validated against observations outside the model-fitting period.
+
+## Source File
+
+```text
+observed-unemployment-1979.csv
