@@ -1,7 +1,3 @@
-
-### `scripts/00-project-setup.R`
-
-```r
 # ============================================================
 # Project Directory Setup
 # Time Series Analysis and Seasonal Forecasting in R
