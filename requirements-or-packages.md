@@ -1,12 +1,17 @@
+
+### `requirements-or-packages.md`
+
+```markdown
 # R Requirements and Packages
 
-## Required R version
+This project is implemented in R.
 
-Recommended:
+Python is not required.
+
+## Recommended R Version
 
 ```text
 R 4.3 or newer
-```
 
 The scripts may also work on earlier supported R 4.x releases.
 
