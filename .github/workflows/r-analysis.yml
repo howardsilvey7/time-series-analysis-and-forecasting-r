@@ -9,6 +9,7 @@ on:
 jobs:
   analysis:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Check out repository
@@ -19,9 +20,29 @@ jobs:
         with:
           use-public-rspm: true
 
+      - name: Install pak
+        run: |
+          install.packages(
+            "pak",
+            repos = sprintf(
+              "https://r-lib.github.io/p/pak/stable/%s/%s/%s",
+              .Platform$pkgType,
+              R.Version()$os,
+              R.Version()$arch
+            )
+          )
+        shell: Rscript {0}
+
       - name: Install required R packages
         run: |
-          Rscript -e 'install.packages(c("astsa", "forecast", "tseries"), repos="https://cloud.r-project.org")'
+          pak::pkg_install(c(
+            "astsa",
+            "forecast",
+            "tseries"
+          ))
+        shell: Rscript {0}
 
       - name: Run complete analysis
-        run: Rscript scripts/run-all.R
+        run: |
+          source("scripts/run-all.R")
+        shell: Rscript {0}
