@@ -1,5 +1,7 @@
 # Time Series Analysis and Seasonal Forecasting in R
 
+![R Analysis](https://github.com/howardsilvey7/time-series-analysis-and-forecasting-r/actions/workflows/r-analysis.yml/badge.svg)
+
 A reproducible R project progressing from theoretical time-series concepts to applied seasonal forecasting of economic data.
 
 The project demonstrates:
