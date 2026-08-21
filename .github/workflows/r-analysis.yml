@@ -1,3 +1,4 @@
+@'
 name: R Analysis
 
 on:
@@ -6,21 +7,29 @@ on:
   pull_request:
     branches: ["main"]
 
+permissions:
+  contents: read
+
 jobs:
   analysis:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+
+    # Normal successful runs complete much faster, but GitHub-hosted
+    # R setup can occasionally be slow. Allow sufficient provisioning time.
+    timeout-minutes: 30
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
 
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
         with:
+          r-version: "release"
           use-public-rspm: true
 
       - name: Install pak
+        shell: Rscript {0}
         run: |
           install.packages(
             "pak",
@@ -31,18 +40,18 @@ jobs:
               R.Version()$arch
             )
           )
-        shell: Rscript {0}
 
       - name: Install required R packages
+        shell: Rscript {0}
         run: |
           pak::pkg_install(c(
             "astsa",
             "forecast",
             "tseries"
           ))
-        shell: Rscript {0}
 
       - name: Run complete analysis
+        shell: Rscript {0}
         run: |
           source("scripts/run-all.R")
-        shell: Rscript {0}
+'@ | Set-Content .\.github\workflows\r-analysis.yml -Encoding UTF8
